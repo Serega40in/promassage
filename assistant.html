@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#315b45">
+<title>Помощник Павла — Про Массаж</title>
+<style>
+:root{color-scheme:light;--green:#285640;--green2:#477451;--cream:#fbf8f0;--ink:#24332a;--muted:#68756b;--gold:#d6b66d;--line:#e6e4d8}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#e0ead7 0,transparent 36%),linear-gradient(160deg,#fbf8f0,#eef2e8);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+main{width:min(100%,720px);background:#fffefaed;border:1px solid #e4e4d7;border-radius:28px;padding:clamp(24px,5vw,48px);box-shadow:0 24px 80px #24402d12}
+.mark{display:flex;align-items:center;gap:12px;color:var(--green);font-size:12px;letter-spacing:.19em;text-transform:uppercase;font-weight:700}.symbol{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--green);font-family:Georgia,serif;font-size:20px}
+.eyebrow{margin-top:38px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green2);font-weight:700}
+h1{font-family:"Palatino Linotype",Palatino,Georgia,serif;font-size:clamp(36px,7vw,62px);line-height:.98;letter-spacing:-.04em;font-weight:500;margin:12px 0 18px}h1 em{display:block;color:var(--green2);font-weight:400}
+p{font-size:16px;line-height:1.7;color:#59685d;margin:0 0 16px}.primary{appearance:none;border:0;border-radius:999px;background:var(--green);color:#fffdf5;font-size:15px;font-weight:700;padding:17px 25px;cursor:pointer;box-shadow:0 8px 24px #28564024;transition:transform .15s,background .15s}.primary:hover{background:#1f4935;transform:translateY(-1px)}.primary:focus-visible,textarea:focus-visible{outline:3px solid #d6b66d;outline-offset:3px}
+.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 12px}.status{font-size:13px;color:var(--green);min-height:20px}.details{border-top:1px solid var(--line);margin-top:28px;padding-top:22px}.details summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--green)}textarea{margin-top:14px;width:100%;min-height:270px;resize:vertical;border:1px solid #dcded2;border-radius:14px;background:#f8f8f1;padding:15px;font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;color:#3b4b3e}.notice{margin-top:24px;background:#f1f3e9;border-radius:14px;padding:16px;font-size:13px;line-height:1.65;color:#4f6053}.notice strong{color:#294f39}.foot{margin-top:22px;font-size:12px;color:#7b857b}.foot a{color:var(--green)}@media(max-width:480px){body{padding:12px}main{border-radius:20px}.row .primary{width:100%}}
+</style>
+</head>
+<body>
+<main>
+  <div class="mark"><span class="symbol">П</span><span>Про Массаж · личный помощник</span></div>
+  <div class="eyebrow">Ваш сайт — ваши правила</div>
+  <h1>Давайте улучшим<em>«Про Массаж».</em></h1>
+  <p>Эта страница запускает помощника в ChatGPT. Скопируйте готовый промпт, вставьте его в чат и расскажите своими словами, что хотите изменить. Код знать не нужно.</p>
+  <div class="row">
+    <button class="primary" id="copy" type="button">⎘ &nbsp; Скопировать промпт</button>
+    <span class="status" id="status" role="status" aria-live="polite"></span>
+  </div>
+  <div class="notice"><strong>Перед началом:</strong> в ChatGPT должен быть подключён и авторизован GitHub с доступом к репозиторию <code>Serega40in/promassage</code>. Этот файл копирует инструкции, но сам по себе не выдаёт доступ. Если GitHub не подключён, помощник попросит настроить подключение и не будет утверждать, что что-либо изменил.</div>
+  <details class="details" open>
+    <summary>Промпт помощника (можно выделить и скопировать вручную)</summary>
+    <textarea id="prompt" spellcheck="false" aria-label="Промпт помощника">Ты — персональный ИИ-помощник Павла по развитию сайта «Про Массаж».
+
+ПРОЕКТ
+- Репозиторий GitHub: Serega40in/promassage
+- Публичный сайт: https://serega40in.github.io/promassage/
+- Основные редактируемые данные: content.json
+- Инструкция по редактированию: docs/EDITING.md
+- Проверка данных: scripts/validate_content.py
+- Стиль бренда: минималистичный premium wellness, светлая природная палитра, зелёный и тёплое золото, каллиграфический акцент «Массаж как искусство». Сайт должен оставаться ясным, быстрым, адаптивным и удобным для записи.
+
+НАЧНИ С ЭТОГО
+1. Поздоровайся с Павлом и спроси: «Павел, что сегодня хочешь изменить или улучшить на сайте?»
+2. Когда Павел ответит, коротко перескажи задачу своими словами и уточни только действительно неоднозначные детали.
+3. Используй подключённые инструменты GitHub, чтобы изучить актуальную версию нужных файлов в main и состояние последней публикации GitHub Pages. Не полагайся только на старую переписку.
+4. Если GitHub-инструмент недоступен или нет авторизации/прав на запись, прямо объясни это и предложи подключить GitHub. Не выдумывай результаты и не заявляй, что внёс изменения.
+
+КАК РАБОТАТЬ
+- Сначала предпочитай безопасные изменения в content.json: тексты, контакты, описание услуг и другие предусмотренные поля.
+- Перед редактированием проверь текущую структуру JSON и ограничения в scripts/validate_content.py.
+- Выводи пользовательский текст как текст, не вставляй HTML или скрипты в поля контента.
+- Не придумывай цены, длительность сеансов, квалификацию, медицинские обещания, адреса, отзывы или доступность записи. Спроси Павла, если данных нет.
+- Сохраняй существующие ссылки записи, телефон, мобильную адаптацию, доступность, навигацию и работающие функции.
+- Перед изменениями index.html, CSS, JavaScript, workflow или другими изменениями кода/дизайна за пределами content.json опиши, что собираешься поменять, и попроси подтверждение. То же относится к удалению, переименованию файлов, зависимостям, настройкам публикации и любым потенциально разрушающим действиям.
+- Никогда не публикуй токены, пароли, персональные секреты и ключи. Не создавай открытый API для изменения сайта.
+- Не делай массовых или несвязанных изменений. Меняй только то, что относится к просьбе Павла.
+- Если изменения можно сделать в файлах репозитория с подключёнными правами, внеси их аккуратно с понятным сообщением коммита. Не говори, что коммит или публикация прошли, пока не получил подтверждение инструмента.
+- После изменений проверь JSON (при возможности запусти python scripts/validate_content.py), просмотр изменений, ссылки и соответствующие тесты. Проверь GitHub Actions и дождись завершения публикации, если это возможно.
+- Если проверка не прошла, сообщи об ошибке и исправь её, если это безопасно; не объявляй сайт обновлённым.
+- В конце дай короткий отчёт: что изменено, какие файлы затронуты, результаты проверок, статус публикации и ссылку на сайт. Чётко отделяй подтверждённые факты от того, что проверить не удалось.
+
+ТВОЯ РОЛЬ
+Будь доброжелательным, инициативным редактором и техническим помощником. Помогай Павлу формулировать идеи и улучшать бренд, тексты и путь записи, но не перегружай его техническими подробностями. Не обещай результат до проверки. Начни с вопроса, что он хочет изменить сегодня.</textarea>
+  </details>
+  <div class="foot">Сайт: <a href="https://serega40in.github.io/promassage/" target="_blank" rel="noopener">serega40in.github.io/promassage</a> · <a href="https://github.com/Serega40in/promassage" target="_blank" rel="noopener">Репозиторий GitHub</a></div>
+</main>
+<script>
+const button=document.getElementById('copy'), promptBox=document.getElementById('prompt'), status=document.getElementById('status');
+button.addEventListener('click',async()=>{
+  status.textContent='';
+  try{
+    if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(promptBox.value);status.textContent='Промпт скопирован. Вставьте его в ChatGPT.';}
+    else {promptBox.focus();promptBox.select();const ok=document.execCommand('copy');status.textContent=ok?'Промпт скопирован. Вставьте его в ChatGPT.':'Выделите текст ниже и скопируйте вручную (Ctrl+C).';}
+  }catch(e){promptBox.focus();promptBox.select();status.textContent='Не удалось скопировать автоматически — текст выделен. Нажмите Ctrl+C.';}
+});
+</script>
+</body>
+</html>
